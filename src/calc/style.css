@@ -1,11 +1,11 @@
-:root[color-theme='light'] {
+:root[color-theme="light"] {
 	--background: rgba(245, 245, 245);
 	--header-background: rgba(231, 234, 235);
 	--text: black;
 	--border: black;
 }
 
-:root[color-theme='dark'] {
+:root[color-theme="dark"] {
 	--background: rgba(45, 45, 50);
 	--header-background: rgba(55, 55, 55);
 	--border: black;
@@ -13,7 +13,7 @@
 }
 
 body {
-	font-family: 'Noto Sans KR', sans-serif;
+	font-family: "Noto Sans KR", sans-serif;
 	margin: 0;
 	-ms-user-select: none; 
 	-moz-user-select: -moz-none;
@@ -160,7 +160,7 @@ input[type="number"] {
 	text-align: right;
 	font-size: 17px;
 	font-weight: 500;
-	font-family: 'Noto Sans KR', sans-serif;
+	font-family: "Noto Sans KR", sans-serif;
 	padding: 3px 5px;
 	border-radius: 3px;
 }
