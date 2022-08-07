@@ -10,7 +10,8 @@ export default defineConfig({
 		rollupOptions: {
 			input: {
 				main: resolve(__dirname, "src/index.html"),
-				prob: resolve(__dirname, "src/prob/index.html")
+				prob: resolve(__dirname, "src/prob/index.html"),
+				calc: resolve(__dirname, "src/calc/index.html")
 			}
 		},
 		outDir: resolve(__dirname, "dist")
