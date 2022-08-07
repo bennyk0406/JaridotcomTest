@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CalculatorHeader from "../components/CalculatorHeader";
+import cardSvg from "../assets/card.svg";
 
 const Card = () => {
 	const [ tierThreeAmount, setTierThreeAmount ] = useState<number|undefined>(0);
@@ -63,7 +64,7 @@ const Card = () => {
 
 	return (
 		<section id="card">
-			<CalculatorHeader src="../assets/card.svg" title="카드 계산기" />
+			<CalculatorHeader src={cardSvg} title="카드 계산기" />
 			<article>
 				<label>
 					3티어 카드 개수 :

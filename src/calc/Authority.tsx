@@ -1,12 +1,13 @@
 import { useState } from "react";
 import CalculatorHeader from "../components/CalculatorHeader";
+import postcardSvg from "../assets/postcard.png";
 
 const Authority = () => {
 	const [ fame, setFame ] = useState(20);
 
 	return (
 		<section id="authority">
-			<CalculatorHeader src="../assets/postcard.svg" title="권위의 엽서 계산기" />
+			<CalculatorHeader src={postcardSvg} title="권위의 엽서 계산기" />
 			<article>
 				<label>
 					현재 명성 :

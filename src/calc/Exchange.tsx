@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CalculatorHeader from "../components/CalculatorHeader";
+import exchangeSvg from "../assets/exchange.svg";
 
 type TradeMode = "sell"|"buy";
 
@@ -20,7 +21,7 @@ const Exchange = () => {
 
 	return (
 		<section id="exchange">
-			<CalculatorHeader src="../assets/exchange.svg" title="환율 계산기" />
+			<CalculatorHeader src={exchangeSvg} title="환율 계산기" />
 			<article>
 				<div>
 					<label className="radio-container">

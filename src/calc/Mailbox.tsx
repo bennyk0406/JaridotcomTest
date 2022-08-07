@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CalculatorHeader from "../components/CalculatorHeader";
+import mailboxSvg from "../assets/mailbox.svg";
 
 const Mailbox = () => {
 	const [ currentMailbox, setCurrentMailbox ] = useState(42);
@@ -27,7 +28,7 @@ const Mailbox = () => {
 
 	return (
 		<section id="mailbox">
-			<CalculatorHeader src="../assets/mailbox.svg" title="우체통 계산기" />
+			<CalculatorHeader src={mailboxSvg} title="우체통 계산기" />
 			<article>
 				<label>
 					현재 우체통 :

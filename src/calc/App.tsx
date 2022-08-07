@@ -5,6 +5,10 @@ import Card from "./Card";
 import Exchange from "./Exchange";
 import Mailbox from "./Mailbox";
 import Authority from "./Authority";
+import cardSvg from "../assets/card.svg";
+import exchangeSvg from "../assets/exchange.svg";
+import mailboxSvg from "../assets/mailbox.svg";
+import postcardSvg from "../assets/postcard.png";
 import type { Theme } from "../theme-context";
 
 window.addEventListener("resize", () => {
@@ -37,16 +41,16 @@ const App = () => {
 			</main>
 			<footer>
 				<a className="navigation" href="#card">
-					<img src="../assets/card.svg" />
+					<img src={cardSvg} />
 				</a>
 				<a className="navigation" href="#exchange">
-					<img src="../assets/exchange.svg" />
+					<img src={exchangeSvg} />
 				</a>
 				<a className="navigation" href="#mailbox">
-					<img src="../assets/mailbox.svg" />
+					<img src={mailboxSvg} />
 				</a>
 				<a className="navigation" href="#authority">
-					<img src="../assets/postcard.png" />
+					<img src={postcardSvg} />
 				</a>
 			</footer>
 		</ThemeContext.Provider>
