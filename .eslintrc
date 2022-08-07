@@ -9,6 +9,7 @@
 		"sourceType": "module"
 	},
 	"plugins": [ "@typescript-eslint" ],
+	"ignorePatterns": [ "vite.config.ts" ],
 	"rules": {
 		"@typescript-eslint/adjacent-overload-signatures": "error",
 		"@typescript-eslint/array-type": [ "error", { "default": "array", "readonly": "array" } ],
