@@ -147,7 +147,7 @@ p {
     flex-direction: column;
     gap: 10px 0;
     width: 180px;
-    margin: 10px auto;
+    margin: 20px auto 10px;
 }
 
 input[type="number"] {

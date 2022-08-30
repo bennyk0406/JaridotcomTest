@@ -101,7 +101,7 @@ const itemData = {
             isEquipItem: true
         },
         {
-            name: "화투 42,
+            name: "화투 42",
             probability: 1.4,
             isEquipItem: true
         },
@@ -313,7 +313,7 @@ const itemData = {
             isEquipItem: true
         },
         {
-            name: "화투 42,
+            name: "화투 42",
             probability: 0.25,
             isEquipItem: true
         },
