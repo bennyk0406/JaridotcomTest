@@ -423,6 +423,16 @@ const itemData = {
             isEquipItem: true
         },
         {
+            name: "명절선물 테러리스트",
+            probability: 9.25,
+            isEquipItem: true
+        },
+        {
+            name: "풍년농부 도굴꾼",
+            probability: 9.25,
+            isEquipItem: true
+        },
+        {
             name: "청룡의 뿔",
             probability: 3.7,
             isEquipItem: false
@@ -449,16 +459,6 @@ const itemData = {
         },
         {
             name: "한가위 기념 엽서",
-            probability: 9.25,
-            isEquipItem: false
-        },
-        {
-            name: "명절선물 테러리스트",
-            probability: 9.25,
-            isEquipItem: false
-        },
-        {
-            name: "풍년농부 도굴꾼",
             probability: 9.25,
             isEquipItem: false
         },
