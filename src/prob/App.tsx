@@ -124,6 +124,22 @@ const App = () => {
     }, [ checkedData ]);
 
     const takeScreenshot = async () => {
+        const date = new Date();
+        const year = date.getFullYear() % 100;
+        const month = (date.getMonth() + 1).toString()
+            .padStart(2, "0");
+        const day = date.getDate()
+            .toString()
+            .padStart(2, "0");
+        const hour = date.getHours()
+            .toString()
+            .padStart(2, "0");
+        const minute = date.getMinutes()
+            .toString()
+            .padStart(2, "0");
+        const second = date.getSeconds()
+            .toString()
+            .padStart(2, "0");
         const [ main ] = document.getElementsByTagName("main");
         main.style.overflowY = "visible";
         main.style.paddingBottom = "0px";
@@ -133,10 +149,10 @@ const App = () => {
         const svg = document.getElementById("screenshot") as HTMLElement;
         svg.style.display = "none";
         main.appendChild(footer);
-        const canvas = await html2canvas(main);
+        const canvas = await html2canvas(main, { scrollX: 0, scrollY: 0 });
         const element = document.createElement("a");
         element.href = canvas.toDataURL("image/png");
-        element.download = "dlatl.png";
+        element.download = `${year}${month}${day}${hour}${minute}${second}-jari.png`;
         element.click();
         main.removeChild(footer);
         footer.style.position = "fixed";
