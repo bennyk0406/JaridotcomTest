@@ -4,8 +4,10 @@ import Header from "../components/Header";
 import itemData from "./data/";
 import high from "../assets/high.png";
 import low from "../assets/low.png";
+import screenshot from "../assets/screenshot.svg";
 import "./style.css";
 import type { Theme } from "../theme-context";
+import html2canvas from "html2canvas";
 
 type Level = "high" | "low";
 
@@ -120,6 +122,29 @@ const App = () => {
         }
         changeProbability();
     }, [ checkedData ]);
+
+    const takeScreenshot = async () => {
+        const [ main ] = document.getElementsByTagName("main");
+        main.style.overflowY = "visible";
+        main.style.paddingBottom = "0px";
+        const [ footer ] = document.getElementsByTagName("footer");
+        footer.style.position = "static";
+        footer.style.marginTop = "20px";
+        const svg = document.getElementById("screenshot") as HTMLElement;
+        svg.style.display = "none";
+        main.appendChild(footer);
+        const canvas = await html2canvas(main);
+        const element = document.createElement("a");
+        element.href = canvas.toDataURL("image/png");
+        element.download = "dlatl.png";
+        element.click();
+        main.removeChild(footer);
+        footer.style.position = "fixed";
+        footer.style.marginTop = "0px";
+        const root = document.getElementById("root") as HTMLElement;
+        root.appendChild(footer);
+        svg.style.display = "block";
+    };
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -243,6 +268,9 @@ const App = () => {
                 </table>
             </main>
             <footer>
+                <button type="button" id="screenshot-button" onClick={() => takeScreenshot()}>
+                    <img id="screenshot" src={screenshot} alt="스크린샷 이미지" />
+                </button>
                 <span id="total-probability">
                     {
                         `장착 아이템 확률 : ${

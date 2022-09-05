@@ -248,6 +248,16 @@ const itemData = {
     ],
     low: [
         {
+            name: "명절선물 테러리스트",
+            probability: 9.25,
+            isEquipItem: true
+        },
+        {
+            name: "풍년농부 도굴꾼",
+            probability: 9.25,
+            isEquipItem: true
+        },
+        {
             name: "우주 배달부 사기꾼",
             probability: 0.39,
             isEquipItem: true
@@ -420,16 +430,6 @@ const itemData = {
         {
             name: "자색 비단 지갑",
             probability: 0.1125,
-            isEquipItem: true
-        },
-        {
-            name: "명절선물 테러리스트",
-            probability: 9.25,
-            isEquipItem: true
-        },
-        {
-            name: "풍년농부 도굴꾼",
-            probability: 9.25,
             isEquipItem: true
         },
         {

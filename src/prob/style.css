@@ -22,6 +22,10 @@ body {
     user-select: none;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 #root {
     display: flex;
     flex-direction: column;
@@ -65,7 +69,7 @@ body {
 
 main {
     flex-grow: 1;
-    padding: 5px 10px 80px 10px;
+    padding: 5px 0 80px 0;
     color: var(--text);
     background-color: var(--background);
     overflow-y: scroll;
@@ -110,7 +114,7 @@ td {
 footer {
     vertical-align: middle;
     width: 100%;
-    padding: 1rem 0px;
+    height: 55px;
     color: var(--text);
     background: var(--header-background);
     text-align: center;
@@ -119,17 +123,19 @@ footer {
     left: 0;
     right: 0;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #gashapon-button {
-    position: fixed;
-    right: 3px;
-    bottom: 0;
     background-color: transparent;
     border: 0;
     outline: 0;
     width: 90px;
     cursor: pointer;
+    padding: 0 5px;
 }
 
 .gashapon-img {
@@ -139,6 +145,23 @@ footer {
 p {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+svg {
+    height: 53px;
+}
+
+#screenshot-button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    width: 55px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+#screenshot {
+    height: 55px;
 }
 
 /* CHUSEOK */
