@@ -123,7 +123,7 @@ const App = () => {
         changeProbability();
     }, [ checkedData ]);
 
-    const takeScreenshot = async () => {
+    const getFormattedTime = () => {
         const date = new Date();
         const year = date.getFullYear() % 100;
         const month = (date.getMonth() + 1).toString()
@@ -140,25 +140,40 @@ const App = () => {
         const second = date.getSeconds()
             .toString()
             .padStart(2, "0");
+        return `${year}${month}${day}${hour}${minute}${second}`;
+    }
+    const takeScreenshot = async () => {
         const [ main ] = document.getElementsByTagName("main");
         main.style.overflowY = "visible";
         main.style.paddingBottom = "0px";
+
         const [ footer ] = document.getElementsByTagName("footer");
         footer.style.position = "static";
         footer.style.marginTop = "20px";
+
         const svg = document.getElementById("screenshot") as HTMLElement;
         svg.style.display = "none";
+
         main.appendChild(footer);
-        const canvas = await html2canvas(main, { scrollX: 0, scrollY: 0 });
+
+        const canvas = await html2canvas(main, {
+            scrollX: 0,
+            scrollY: 0,
+            allowTaint: true,
+            useCORS: true
+        });
         const element = document.createElement("a");
         element.href = canvas.toDataURL("image/png");
-        element.download = `${year}${month}${day}${hour}${minute}${second}-jari.png`;
+        element.download = `${getFormattedTime()}-jari.png`;
         element.click();
+
         main.removeChild(footer);
+
         footer.style.position = "fixed";
         footer.style.marginTop = "0px";
         const root = document.getElementById("root") as HTMLElement;
         root.appendChild(footer);
+
         svg.style.display = "block";
     };
 
