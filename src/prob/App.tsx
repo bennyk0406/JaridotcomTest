@@ -166,7 +166,7 @@ const App = () => {
         const element = document.createElement("a");
         element.href = canvas.toDataURL("image/png");
         element.download = `${getFormattedTime()}-jari.png`;
-        // element.click();
+        element.click();
 
         main.removeChild(footer);
 
@@ -176,8 +176,6 @@ const App = () => {
         root.appendChild(footer);
 
         svg.style.display = "block";
-
-        main.appendChild(canvas);
     };
 
     return (
