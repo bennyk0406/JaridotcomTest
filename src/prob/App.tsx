@@ -166,7 +166,9 @@ const App = () => {
         const element = document.createElement("a");
         element.href = canvas.toDataURL("image/png");
         element.download = `${getFormattedTime()}-jari.png`;
+        document.body.appendChild(element);
         element.click();
+        element.remove();
 
         main.removeChild(footer);
 
