@@ -141,7 +141,8 @@ const App = () => {
             .toString()
             .padStart(2, "0");
         return `${year}${month}${day}${hour}${minute}${second}`;
-    }
+    };
+
     const takeScreenshot = async () => {
         const [ main ] = document.getElementsByTagName("main");
         main.style.overflowY = "visible";
@@ -164,6 +165,8 @@ const App = () => {
         });
         const element = document.createElement("a");
         element.href = canvas.toDataURL("image/png");
+        location.href = canvas.toDataURL("image/png");
+        //
         element.download = `${getFormattedTime()}-jari.png`;
         element.click();
 
