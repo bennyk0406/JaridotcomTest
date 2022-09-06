@@ -166,9 +166,9 @@ const App = () => {
         const element = document.createElement("a");
         element.href = canvas.toDataURL("image/png");
         element.download = `${getFormattedTime()}-jari.png`;
+        if ([ "iphone", "ipad", "ipod" ].some((v) => v.includes(navigator.userAgent))) element.target = "_blank";
         document.body.appendChild(element);
-        // element.click();
-        element.remove();
+        element.click();
 
         main.removeChild(footer);
 
